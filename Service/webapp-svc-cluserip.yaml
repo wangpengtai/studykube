@@ -4,7 +4,7 @@ metadata:
   labels:
     name: webapp
   name: webapp
-  namespace: default
+  namespace: default∏
 spec:
   ports:
   - port: 8081
