@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gitlab-lb
+  namespace: kube-ops
+spec:
+  tls:
+  - hosts:
+    - gitlab.mytest.io
+    secretName: tls-gitlab-ingress
+  rules:
+  - host: gitlab.mytest.io
+    http:
+      paths:
+      - backend:
+          serviceName: gitlab-gitlab-ce
+          servicePort: 80
